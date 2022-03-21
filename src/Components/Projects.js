@@ -38,7 +38,7 @@ function Projects() {
                                     <p>A fun game to enjoy with your friends which can be made spooky - Ask questions and get answers. This project is an inspiration from a virtual tarot reading <a href="https://peteranswers.com/" target="_blank">website.</a>
                                     <br></br><a href="https://www.makeuseof.com/tag/peter-work-code-prank/" target="_blank" className="App-link">How to play?</a></p>
                                     <li><a href="https://github.com/ittsprashant/ask_anna" target="_blank" className="App-link">Github</a></li>
-                                    <li><a href="https://priceless-shirley-4012e1.netlify.app/" target="_blank" className="App-link">Demo</a></li>
+                                    <li><a href="https://askanna.netlify.app/" target="_blank" className="App-link">Demo</a></li>
                                 </ul>
                             </li>
 
