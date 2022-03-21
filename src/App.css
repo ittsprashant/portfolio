@@ -3,7 +3,8 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  /* height: 40vmin; */
+  height: 12vmin;
   pointer-events: none;
 }
 
@@ -15,19 +16,122 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column; 
+  align-items: flex-start; 
+  /* justify-content: center;  */
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
+.main-sec-1{
+  background-color: #282c34;
+  color: white;
+
+}
+
+.main-sec-1-col-1 {
+  text-align: left;
+}
+
+.main-sec-1-col-2{
+padding: 40px 20px;
+}
+
+.text-class {
+  font-size: 46px;
+}
+
+.text-class-subclass {
+  font-size: 42px;
+}
+
+.text-class-subclass-skill {
+  font-size: 22px;
+}
+
+.let-class{
+  /* color: darkgray */
+  color: #61dafb;
+}
 .App-link {
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.App-link:hover {
+  color: #61dafb;
+  /* text-decoration: none; */
+}
+
+.hire-me {
+  /* color: #fff; */
+  background-color:  #61dafb !important;
+  color: #212529 !important;
+  border-color: #61dafb !important;
+
+
+}
+
+.hire-me:hover {
+  color: #212529 !important;
+  background-color:  #61dafb !important;
+  /* text-decoration: underline; */
+  border-color: #61dafb !important;
+  border: solid 2px #61dafb !important;
+
+}
+.name {
   color: #61dafb;
 }
 
+.sec-2{
+  padding: 25px 20px;
+}
+
+.sec-heading{
+  font-size: 36px;
+  color: #61dafb;
+}
+
+.ul-list{
+  width: 75%;
+  margin: auto;
+}
+
+.ul-list-company {
+  float: left;
+  font-size: 22px;
+}
+
+.ul-list-tenure {
+  float: right;
+}
+
+.exp-list{
+  list-style: none;
+}
+.job-title{
+  margin-bottom: 0px;
+  font-size: 22px;
+}
+.job-profile{
+  text-align: left;
+  padding-left: 5px;
+  font-size: 20px;
+}
+.jd-list{
+  text-align: left;
+  list-style: disc;
+  font-size: 18px;
+}
+.projects-list{
+  text-align: left;
+}
+strong {
+  color: darkgray;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
