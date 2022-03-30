@@ -9,11 +9,11 @@ function Projects() {
     return (
         <>
 
-            <div class="main-sec-1">
+            <div className="main-sec-1">
                 <Container>
                     <div className="sec-2">
                         <p className="sec-heading">{`<>{...Add-Ons}</>`}</p>
-                        <ul className={window.innerWidth > 768 ? "ul-list jd-list" : ""}>
+                        <ul className={window.innerWidth > 768 ? "ul-list jd-list" : "ul-list-mob"}>
                         <li>
                                 <strong>
                                     Styx Biotechnologies</strong>
@@ -37,18 +37,14 @@ function Projects() {
                                 <ul>
                                     <p>A web app that notifies whenever vaccination slots are available.
                                     </p>
-                                    <p><a href="https://github.com/ittsprashant/go_for_vaccine" target="_blank" className="App-link">Github</a>{" | "}<a href="https://go-for-vaccine.netlify.app/" target="_blank" className="App-link">Demo</a></p>
-                                    {/* <li><a href="https://github.com/ittsprashant/go_for_vaccine" target="_blank" className="App-link">Github</a></li>
-                                    <li><a href="https://go-for-vaccine.netlify.app/" target="_blank" className="App-link">Demo</a></li> */}
+                                    <p><a href="https://github.com/ittsprashant/go_for_vaccine" target="_blank" className="App-link">Github</a><span style={{color:"darkgray"}}>{" | "}</span><a href="https://go-for-vaccine.netlify.app/" target="_blank" className="App-link">Demo</a></p>
                                 </ul>
                             </li>
                             <li>
                                 <strong>Ask Anna</strong>
                                 <ul>
                                     <p>A fun game to enjoy with your friends which can be made spooky - Ask questions and get answers. This project is an inspiration from a virtual tarot reading <a href="https://peteranswers.com/" target="_blank">website.</a>
-                                    <br></br><a href="https://www.makeuseof.com/tag/peter-work-code-prank/" target="_blank" className="App-link">How to play?</a>{" | "}<a href="https://github.com/ittsprashant/ask_anna" target="_blank" className="App-link">Github</a>{" | "}<a href="https://askanna.netlify.app/" target="_blank" className="App-link">Demo</a></p>
-                                    {/* <li><a href="https://github.com/ittsprashant/ask_anna" target="_blank" className="App-link">Github</a></li>
-                                    <li><a href="https://askanna.netlify.app/" target="_blank" className="App-link">Demo</a></li> */}
+                                    <br></br><a href="https://www.makeuseof.com/tag/peter-work-code-prank/" target="_blank" className="App-link">How to play?</a><span style={{color:"darkgray"}}>{" | "}</span><a href="https://github.com/ittsprashant/ask_anna" target="_blank" className="App-link">Github</a><span style={{color:"darkgray"}}>{" | "}</span><a href="https://askanna.netlify.app/" target="_blank" className="App-link">Demo</a></p>
                                 </ul>
                             </li>
 

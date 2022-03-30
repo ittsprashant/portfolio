@@ -4,11 +4,16 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Button } from 'react-bootstrap';
 import Projects from './Projects';
+import HireMe from './HireMe';
 
 function Home() {
+    const [showModal, setShowModal] = React.useState(false);
+    const handleShowModal = (value) => {
+        setShowModal(value);
+    }
     return (
         <>
-            <div class="main-sec-1">
+            <div className="main-sec-1">
                 <Container>
                     <Row xs={1} md={1} lg={2}>
                         <Col>
@@ -25,20 +30,47 @@ function Home() {
                             </div>
                         </Col>
 
-                        <Col>
-                            <div className={window.innerWidth > 768 ? "main-sec-1-col-2" : "main-sec-1-col-2 d-grid gap-2"}>
+                        {window.innerWidth > 768 ? <>
+
+                            <Col style={{ position: "relative" }}>
+                            <div className="main-sec-1-col-2">
+                                <Button className="hire-me" size="lg" onClick={()=>setShowModal(true)}>
+                                    Hire Me!
+                                </Button>{' '}
+
+
+                            </div>
+                            <div className="exp-div">
+                                2+ Years
+                            </div>
+                        </Col>
+                        
+                        
+                        </>:<>
+
+                        <Col style={{ position: "relative" }}>
+
+                        <div className="exp-div-mweb">
+                                2+ Years
+                            </div>
+                            <div className="main-sec-1-col-2 d-grid gap-2">
                                 <Button className="hire-me" size="lg">
                                     Hire Me!
                                 </Button>{' '}
+
+
                             </div>
+                            
                         </Col>
+                        
+                        </>}
                     </Row>
                 </Container >
 
             </div >
 
 
-            <div class="main-sec-1">
+            <div className="main-sec-1">
                 <Container>
                     <div className="sec-2">
                         <p className="sec-heading">{`<>{...Me}</>`}</p>
@@ -72,7 +104,7 @@ function Home() {
                                         <li><strong>NPD Tool:</strong> Created New Product Detection Tool for Ferrero from scratch in react. This tool allows client to recognize different products in a shelf image and mark them.</li>
                                         <li><strong>SSO:</strong> Implemented Paralleldots Single Sign On for client dashboards and demos.</li>
                                         <li>Revamped entire website of Paralleldots ensuring 3x faster loading time</li>
-                                        
+
                                     </ul>
                                 </p>
                             </li>
@@ -82,7 +114,9 @@ function Home() {
 
             </div >
 
-            <Projects/>
+            <Projects />
+
+            <HireMe showModal={showModal} handleShowModal={handleShowModal}/>
         </>
     )
 }

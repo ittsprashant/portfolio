@@ -4,7 +4,7 @@
 
 .App-logo {
   /* height: 40vmin; */
-  height: 12vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -37,10 +37,42 @@
 
 .main-sec-1-col-2{
 padding: 40px 20px;
+position: relative;
+}
+
+.exp-div {
+  /* position: absolute; */
+    /* top: 124px; */
+    /* bottom: 0px; */
+    /* right: 180px; */
+    background:#61dafb;
+    padding: 40px;
+    /* border: solid 4px #61dafb; */
+    border-radius: 6px;
+    font-size: 30px;
+    background-image: linear-gradient(to right, #61dafb , white);
+    color: #212529;
+    width: 40%;
+    margin: auto;
+}
+
+.exp-div-mweb {
+  background:#61dafb;
+  /* padding: 40px; */
+  /* border: solid 4px #61dafb; */
+  border-radius: 6px;
+  font-size: 30px;
+  background-image: linear-gradient(to right, #61dafb , white);
+  color: #212529;
+  width: 95%;
+    margin: auto;
+  /* width: 30%; */
+  /* margin: auto; */
 }
 
 .text-class {
   font-size: 46px;
+  position: relative;
 }
 
 .text-class-subclass {
@@ -60,6 +92,9 @@ padding: 40px 20px;
   text-decoration: none;
 }
 
+.ul-list-mob{
+  text-align: left;
+}
 .App-link:hover {
   color: #61dafb;
   /* text-decoration: none; */
@@ -79,7 +114,9 @@ padding: 40px 20px;
   background-color:  #61dafb !important;
   /* text-decoration: underline; */
   border-color: #61dafb !important;
-  border: solid 2px #61dafb !important;
+  /* border: solid 2px #61dafb !important; */
+  background-image: linear-gradient(to right, #61dafb , white);
+
 
 }
 .name {
@@ -96,7 +133,7 @@ padding: 40px 20px;
 }
 
 .ul-list{
-  width: 75%;
+  width: 80%;
   margin: auto;
 }
 
@@ -107,6 +144,7 @@ padding: 40px 20px;
 
 .ul-list-tenure {
   float: right;
+  font-size: 18px;
 }
 
 .exp-list{
