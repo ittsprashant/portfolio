@@ -51,7 +51,7 @@ function Home() {
                         <Col style={{ position: "relative" }}>
 
                         <div className="exp-div-mweb">
-                                2+ Years
+                                3 Years
                             </div>
                             <div className="main-sec-1-col-2 d-grid gap-2">
                                 <Button className="hire-me" size="lg">
