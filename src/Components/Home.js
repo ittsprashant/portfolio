@@ -41,7 +41,7 @@ function Home() {
 
                             </div>
                             <div className="exp-div">
-                                2+ Years
+                                3 Years
                             </div>
                         </Col>
                         
