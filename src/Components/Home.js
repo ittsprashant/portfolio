@@ -54,7 +54,7 @@ function Home() {
                                 3 Years
                             </div>
                             <div className="main-sec-1-col-2 d-grid gap-2">
-                                <Button className="hire-me" size="lg">
+                                <Button className="hire-me" size="lg" onClick={()=>setShowModal(true)}>
                                     Hire Me!
                                 </Button>{' '}
 
