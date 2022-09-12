@@ -22,7 +22,9 @@ function HireMe(props) {
                         Close
                     </Button> */}
                     <Button variant="primary" onClick={()=>{
-                        window.open("https://drive.google.com/file/d/1gSA2XsNsN4HaCn6ImM1DqQQI1NAPvSMM/view?usp=sharing","_blank")
+//                         https://drive.google.com/file/d/1wcFCioY69qk6wNE-eJtNnoxWXAx1lGmA/view
+//                         https://drive.google.com/file/d/1gSA2XsNsN4HaCn6ImM1DqQQI1NAPvSMM/view?usp=sharing
+                        window.open("https://drive.google.com/file/d/1wcFCioY69qk6wNE-eJtNnoxWXAx1lGmA/view","_blank")
                         handleClose()}}>
                         {/* <a href="https://drive.google.com/file/d/1gSA2XsNsN4HaCn6ImM1DqQQI1NAPvSMM/view?usp=sharing" download></a> */}
                         View Resume
