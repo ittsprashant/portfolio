@@ -34,7 +34,7 @@ function App() {
         </a> */}
       </header>
       {/* <Home/>  */}
-      <HomeRevamp/>
+      <HomeRevamp handleShowModal={handleShowModal}/>
 
       <HireMe showModal={showModal} handleShowModal={handleShowModal}/>
 

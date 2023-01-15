@@ -6,14 +6,14 @@ import TextSphere from './TextSphere';
 // 8dc891 - green
 // 61dafb - blue
 // #f56f16 - orange
-function HomeRevamp() {
+function HomeRevamp(props) {
 
     return (
         <div style={{margin:"50px auto"}}>
             <h2>Hi...</h2>
 
-            <h2>I am <span className='get-underline' style={{ color: "#8dc891" }}>Prashant</span> Awasthi {`{ReactJs Developer}`}</h2>
-            <p>I have <span className='get-underline' style={{ color: "#8dc891", fontWeight: "600", fontSize: "22px" }}>3+ years</span>  of Software Development Experience with overall professional experience of <span style={{ "textDecoration": "underline" }}>4 years</span></p>
+            <h2>I am <span className='get-underline' onClick={() => props?.handleShowModal(true)} style={{ color: "#8dc891" }}>Prashant</span> Awasthi <span style={{color:"#f56f16", fontWeight:"400"}}>{`,${" "} {ReactJs Developer}`}</span></h2>
+            <p>I have <span className='get-underline' onClick={() => props?.handleShowModal(true)} style={{ color: "#8dc891", fontWeight: "600", fontSize: "22px" }}>3+ years</span>  of Software Development Experience with overall professional experience of <span style={{ "textDecoration": "underline" }}>4 years</span></p>
 
             <div className='two-column-section'>
 

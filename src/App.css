@@ -190,7 +190,7 @@ strong {
 /* revamp css */
 
 .get-underline:hover{
-  text-decoration: underline;
+  /* text-decoration: underline; */
   /* transition-duration: 2s; */
   /* transition: ease-in; */
   /* text-decoration-color: ; */
@@ -259,4 +259,35 @@ h4{
   width: 85% !important;
 }
 
+}
+
+
+.get-underline {
+  display: inline-block;
+  position: relative;
+  /* color:  */
+/* #0087ca; */
+}
+
+.get-underline:hover{
+  cursor: pointer;
+
+}
+
+.get-underline:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #8dc891;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.get-underline:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
