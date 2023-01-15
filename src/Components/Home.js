@@ -116,7 +116,6 @@ function Home() {
 
             <Projects />
 
-            <HireMe showModal={showModal} handleShowModal={handleShowModal}/>
         </>
     )
 }

@@ -15,14 +15,17 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   /* min-height: 100vh; */
   display: flex;
   flex-direction: column; 
-  align-items: flex-start; 
+  /* align-items: flex-start;  */
+  align-items: flex-end; 
   /* justify-content: center;  */
   font-size: calc(10px + 2vmin);
   color: white;
+  position: sticky;
+  top: 0
 }
 
 .main-sec-1{
@@ -88,7 +91,8 @@ position: relative;
   color: #61dafb;
 }
 .App-link {
-  color: #61dafb;
+  /* color: #61dafb; */
+  color: #de76b4;
   text-decoration: none;
 }
 
@@ -96,7 +100,8 @@ position: relative;
   text-align: left;
 }
 .App-link:hover {
-  color: #61dafb;
+  /* color: #61dafb; */
+  color: #de76b4;
   /* text-decoration: none; */
 }
 
@@ -177,4 +182,49 @@ strong {
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+
+/* revamp css */
+
+.get-underline:hover{
+  text-decoration: underline;
+  /* transition-duration: 2s; */
+  /* transition: ease-in; */
+  /* text-decoration-color: ; */
+}
+
+
+.two-column-section{
+  display: flex;
+  margin-top: 100px;
+}
+
+.section-30{
+  width: 30%;
+  text-align: justify;
+}
+
+.section-70{
+  width: 70%;
+  /* text-align: justify; */
+}
+
+h4{
+  color:#f56f16
+}
+  
+.company-name{
+  color:#8dc891
+}
+
+.tagcloud{
+  width: 50% !important;
+  height: 400px !important;
+}
+
+.tagcloud--item{
+  color: #8dc891 !important
 }

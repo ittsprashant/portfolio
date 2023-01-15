@@ -24,7 +24,8 @@ function HireMe(props) {
                     <Button variant="primary" onClick={()=>{
 //                         https://drive.google.com/file/d/1wcFCioY69qk6wNE-eJtNnoxWXAx1lGmA/view
 //                         https://drive.google.com/file/d/1gSA2XsNsN4HaCn6ImM1DqQQI1NAPvSMM/view?usp=sharing
-                        window.open("https://drive.google.com/file/d/1wcFCioY69qk6wNE-eJtNnoxWXAx1lGmA/view","_blank")
+// https://drive.google.com/file/d/1plvpTOQesrXyk1x_9spTI3zZlNyukcO6/view
+                        window.open("https://drive.google.com/file/d/1plvpTOQesrXyk1x_9spTI3zZlNyukcO6/view","_blank")
                         handleClose()}}>
                         {/* <a href="https://drive.google.com/file/d/1gSA2XsNsN4HaCn6ImM1DqQQI1NAPvSMM/view?usp=sharing" download></a> */}
                         View Resume
