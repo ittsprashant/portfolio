@@ -85,7 +85,7 @@ function HomeRevamp() {
 
                     <h4>{`<Tech Stack/>`}</h4>
 
-                    <div style={{ margin: "40px auto" }}>
+                    <div className='tech-stack-detail' style={{ margin: "40px auto" }}>
                         <ul>
                             <li>ReactJs</li>
                             <li>Java Script</li>
@@ -111,7 +111,7 @@ function HomeRevamp() {
             <div>
                 <h4>{`<Add-Ons/>`}</h4>
 
-                <div style={{margin: "40px auto", width:"60%", textAlign:"left"}}>
+                <div className='add-on-detail' style={{margin: "40px auto", width:"60%", textAlign:"left"}}>
 
                     <h5>Styx Biotechnologies</h5>
                     <ul>

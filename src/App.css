@@ -228,3 +228,35 @@ h4{
 .tagcloud--item{
   color: #8dc891 !important
 }
+
+@media only screen and (max-width: 768px) {
+  .two-column-section{
+    display: block;
+  }
+
+  .section-30{
+    width: 100%;
+    text-align: center;
+  }
+  
+  .section-70{
+    width: 100%;
+    text-align: center;
+  }
+
+  .tech-stack-detail{
+    margin: 40px auto;
+    width: 35%;
+    text-align: left;
+  }
+
+  .tagcloud {
+    /* width: 50% !important; */
+    height: 300px !important;
+}
+
+.add-on-detail{
+  width: 85% !important;
+}
+
+}
