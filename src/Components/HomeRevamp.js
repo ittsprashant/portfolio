@@ -13,15 +13,33 @@ function HomeRevamp(props) {
             <h2>Hi...</h2>
 
             <h2>I am <span className='get-underline' onClick={() => props?.handleShowModal(true)} style={{ color: "#8dc891" }}>Prashant</span> Awasthi <span style={{color:"#f56f16", fontWeight:"400"}}>{`,${" "} {ReactJs Developer}`}</span></h2>
-            <p>I have <span className='get-underline' onClick={() => props?.handleShowModal(true)} style={{ color: "#8dc891", fontWeight: "600", fontSize: "22px" }}>3+ years</span>  of Software Development Experience with overall professional experience of <span style={{ "textDecoration": "underline" }}>4 years</span></p>
+            <p>I have <span className='get-underline' onClick={() => props?.handleShowModal(true)} style={{ color: "#8dc891", fontWeight: "600", fontSize: "22px" }}>4+ years</span>  of Software Development Experience with overall professional experience of <span style={{ "textDecoration": "underline" }}>5 years</span></p>
 
             <div className='two-column-section'>
 
                 <div className='section-70'>
                     <h4>{`<Work Experience/>`}</h4>
                     <div style={{ textAlign: "left", width: "75%", margin: "40px auto" }}>
+
+
+                    <h5 className='company-name'>Freecharge Payments Pvt. Ltd.</h5>
+                        <h6>Senior Software Development Engineer - FrontEnd (ReactJs)<span style={{ float: "right" }}>(July 2023 – Present)</span></h6>
+                        <ul>
+                            <li>
+                            Responsible for development of all FD booking web journeys for AXIS Bank in reactjs.
+                            </li>
+                            <li>
+                            Regularizing all checks and controls for data safety using encryption on payloads.
+                            </li>
+                            <li>
+                            Helped in increasing business by increasing user retention in the journey by 3x.
+                            </li>
+                        </ul>
+
+
+
                         <h5 className='company-name'>Extramarks Educations Pvt. Ltd. </h5>
-                        <h6>Sr. Software Engineer (ReactJs) <span style={{ float: "right" }}>(Aug 2022 - Present)</span></h6>
+                        <h6>Sr. Software Engineer (ReactJs) <span style={{ float: "right" }}>(Aug 2022 - July 2023)</span></h6>
                         <ul>
                             <li>
                                 Mentoring juniors by helping them dive deep into the concepts of react and vanilla JS
@@ -32,6 +50,7 @@ function HomeRevamp(props) {
                             <li>
                                 Some of the projects include converting current app to a PWA which will allow data to be synced in the background at specific intervals
                             </li>
+                            <li>Revised, modularized and updated old code bases to modern development standards, reducing operating costs, and improving functionality.</li>
                         </ul>
 
 
@@ -88,9 +107,13 @@ function HomeRevamp(props) {
                     <div className='tech-stack-detail' style={{ margin: "40px auto" }}>
                         <ul>
                             <li>ReactJs</li>
+                            <li>NextJs</li>
                             <li>Java Script</li>
                             <li>HTML</li>
                             <li>CSS</li>
+                            <li>Software Design</li>
+                            <li>Testing and Debugging</li>
+                            <li>Technical Documentation</li>
                             <li>Python</li>
                             <li>SQL</li>
                         </ul>

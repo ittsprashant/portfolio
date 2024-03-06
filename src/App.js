@@ -20,7 +20,7 @@ function App() {
       <header className="App-header">
         <div style={{float:"right", padding:"10px", display:"flex", flexDirection:"column"}}>
         <img src={logo} className="App-logo" alt="logo" />
-        <Button variant="outline-success" size="sm" onClick={()=>setShowModal(true)}>Hire Me</Button>
+        <Button variant="outline-success" style={{background: "#fff"}} size="sm" onClick={()=>setShowModal(true)}>Hire Me</Button>
         </div>
         {/* <p>
           Edit <code>src/App.js</code> and save to reload.

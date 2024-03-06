@@ -10,9 +10,15 @@ const TextSphere = () => {
   useEffect(() => {
     const myTags = [
       'JavaScript', 'CSS', 'HTML',
-       'React', "Redux",
-      'Python', 'git',
-       'MySQL', 'jQuery',
+       'React', 
+       "Redux",
+        "Software Design",
+       "Testing and Debugging", 
+       "Technical Documentation",
+      'Python', 
+      'git',
+       'MySQL', 
+       'jQuery',
   ];
 
   // var tagCloud = TagCloud('.content', myTags);
