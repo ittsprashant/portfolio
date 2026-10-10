@@ -41,6 +41,7 @@ export const stats = [
 export const experience = [
   {
     company: 'FreechargeBiz',
+    url: 'https://www.freechargebiz.in/',
     location: 'Gurugram',
     roles: [
       {
