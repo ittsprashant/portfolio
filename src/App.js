@@ -1,46 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
-import Home from './Components/Home';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import HomeRevamp from './Components/HomeRevamp';
-import { Button } from 'react-bootstrap';
-import HireMe from './Components/HireMe';
-import React from 'react';
-
+import React, { useCallback, useEffect, useState } from 'react';
+import Background from './Components/Background';
+import Nav, { SECTION_IDS } from './Components/Nav';
+import Hero from './Components/Hero';
+import { Stats, Experience, Skills, Projects, Beyond, Contact, Footer } from './Components/Sections';
+import CommandPalette from './Components/CommandPalette';
+import { useActiveSection, useCopy, useReveal } from './hooks';
+import { profile } from './data';
 
 function App() {
+  const [paletteOpen, setPaletteOpen] = useState(false);
+  const [copied, copy] = useCopy();
+  const active = useActiveSection(SECTION_IDS);
+  useReveal();
 
-  const [showModal, setShowModal] = React.useState(false);
-  const handleShowModal = (value) => {
-      setShowModal(value);
-  }
+  const copyEmail = useCallback(() => copy(profile.email), [copy]);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setPaletteOpen((o) => !o);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <div style={{float:"right", padding:"10px", display:"flex", flexDirection:"column"}}>
-        <img src={logo} className="App-logo" alt="logo" />
-        <Button variant="outline-success" style={{background: "#fff"}} size="sm" onClick={()=>setShowModal(true)}>Hire Me</Button>
-        </div>
-        {/* <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p> */}
-        {/* <a
-          className="App-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-      </header>
-      {/* <Home/>  */}
-      <HomeRevamp handleShowModal={handleShowModal}/>
-
-      <HireMe showModal={showModal} handleShowModal={handleShowModal}/>
-
-      
-
-    </div>
+    <>
+      <Background />
+      <Nav active={active} onOpenPalette={() => setPaletteOpen(true)} />
+      <main>
+        <Hero />
+        <Stats />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Beyond />
+        <Contact copied={copied} onCopyEmail={copyEmail} />
+      </main>
+      <Footer />
+      <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} onCopyEmail={copyEmail} />
+      <div className={`toast ${copied ? 'toast-show' : ''}`} role="status">
+        Email copied to clipboard ✓
+      </div>
+    </>
   );
 }
 

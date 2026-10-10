@@ -1,33 +1,33 @@
-/* Importing google font  */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;600;700;800;900&display=swap');
-
-.text-shpere {
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #1e1e1e;
+.sphere {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
 }
 
-.tagcloud {
-    display: inline-block;
-    top: 0;
-    left: 0;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.0625em;
-    font-size: 1.3em;
+.sphere .tagcloud {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.02em;
 }
 
-/* Change color of each text in sphere on hover   */
-.tagcloud--item {
-    color: #00ffffff;
-    text-transform: uppercase;
+.sphere .tagcloud--item {
+  color: var(--cyan);
+  cursor: grab;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
-.tagcloud--item:hover {
-    color: #ff6347;
+.sphere .tagcloud--item:nth-child(3n + 1) {
+  color: var(--green);
+}
+
+.sphere .tagcloud--item:nth-child(3n + 2) {
+  color: var(--text);
+}
+
+.sphere .tagcloud--item:hover {
+  color: var(--orange);
+  text-shadow: 0 0 18px rgba(245, 111, 22, 0.6);
 }
