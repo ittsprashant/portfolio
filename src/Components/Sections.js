@@ -94,11 +94,10 @@ export function Experience() {
         </SectionHeader>
 
         <ol className="timeline" ref={listRef}>
-          {experience.map((job, i) => {
-            const startsEarlier = job.compact && !experience[i - 1]?.compact;
+          {experience.map((job) => {
             return (
               <li className={`timeline-item reveal ${job.compact ? 'is-compact' : ''}`} key={job.company}>
-                {startsEarlier && <p className="timeline-divider">Before software</p>}
+                {job.beforeSoftware && <p className="timeline-divider">Before software</p>}
                 <span className="timeline-dot" />
                 <div className="card job-card" {...tiltHandlers(3)}>
                   <div className="card-spotlight" />
@@ -178,13 +177,13 @@ export function Skills() {
         </div>
       </div>
 
-      <div className="marquee" aria-hidden="true">
+      {/* <div className="marquee" aria-hidden="true">
         <div className="marquee-track">
           {[...marquee, ...marquee].map((s, i) => (
             <span key={i}>{s}<em>✦</em></span>
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

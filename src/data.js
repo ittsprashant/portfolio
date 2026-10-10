@@ -42,7 +42,7 @@ export const experience = [
   {
     company: 'FreechargeBiz',
     url: 'https://www.freechargebiz.in/',
-    location: 'Gurugram',
+    location: 'Bangalore | Gurugram',
     roles: [
       {
         title: 'Lead Software Development Engineer',
@@ -61,12 +61,12 @@ export const experience = [
         ],
       },
     ],
-    tags: ['React', 'Next.js', 'AI integration', 'SSO', 'Architecture'],
+    tags: ['React', 'Next', 'Node', 'Express', 'Mongo', 'Mentoring'],
   },
   {
     company: 'Freecharge',
     url: 'https://www.freecharge.in/',
-    location: 'Gurugram',
+    location: 'Bangalore | Gurugram',
     roles: [
       {
         title: 'Senior Software Development Engineer',
@@ -93,7 +93,7 @@ export const experience = [
         ],
       },
     ],
-    tags: ['React', 'Fintech', 'SDK', 'crypto-js', 'Performance', 'Mentoring'],
+    tags: ['React', 'Next', 'Fintech', 'SDK', 'Performance', 'Mentoring'],
   },
   {
     company: 'Extramarks Education',
@@ -157,6 +157,7 @@ export const experience = [
     company: 'Unilever',
     location: 'Haridwar',
     compact: true,
+    beforeSoftware: true,
     roles: [
       {
         title: 'Production Executive',
