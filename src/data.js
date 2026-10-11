@@ -196,7 +196,7 @@ export const projects = [
       'Recipients can open a whole leaf as a named tab group',
     ],
     preview: 'linkleaf.netlify.app/#v2.eJyrVipTsjLSUcpLzE1V',
-    tags: ['Chrome MV3', 'JavaScript', 'Privacy-first', 'node:test'],
+    tags: ['Chrome Extension (MV3)', 'Vanilla JS', 'Chrome APIs', 'CompressionStream', 'No backend'],
     links: [
       { label: 'Install from Chrome Web Store', href: 'https://chromewebstore.google.com/detail/linkleaf-tab-sharer/olnhckkiecodhbigadomfninaeimaika' },
       { label: 'Website', href: 'https://linkleaf.netlify.app/' },
