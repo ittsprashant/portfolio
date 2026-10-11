@@ -14,7 +14,7 @@ function CodeCard() {
     <>  <S c="key">experience</S>: <S c="str">"{years}+ years"</S>,</>,
     <>  <S c="key">stack</S>: [<S c="str">"React"</S>, <S c="str">"Next"</S>, <S c="str">"Node"</S>, <S c="str">"JS"</S>],</>,
     <>  <S c="key">owns</S>: <S c="str">"web development"</S>,</>,
-    <>  <S c="key">offStage</S>: <S c="str">"theatre & quizzing"</S>,</>,
+    <>  <S c="key">offStage</S>: <S c="str">"writing, theatre & quizzing"</S>,</>,
     <>  <S c="fn">hire</S>: () <S c="op">=&gt;</S> <S c="str">"let's talk"</S>,</>,
     <>{'};'}</>,
   ];

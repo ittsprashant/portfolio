@@ -16,7 +16,7 @@ export const profile = {
   location: 'Bangalore · Gurugram · Kanpur',
   email: 'itsprashant95@gmail.com',
   phone: '+91-7830929186',
-  resume: 'https://drive.google.com/file/d/1DHqh4MRyTNuV_1VYPJZtHDVn6XhKg51G/view',
+  resume: 'https://drive.google.com/file/d/1uKTduS0mUa4zydEf17Lf30SX2msDtXyz/view',
   linkedin: 'https://www.linkedin.com/in/itsprashant95/',
   github: 'https://github.com/ittsprashant',
   roles: [
@@ -185,6 +185,24 @@ export const sphereTags = [
 ];
 
 export const projects = [
+  {
+    name: 'LinkLeaf: Tab Sharer',
+    featured: true,
+    blurb: 'A Chrome extension that bundles your open tabs into a single shareable link. Nothing is uploaded: the whole leaf is compressed into the URL fragment, which browsers never send to a server.',
+    highlights: [
+      'Pick tabs from a window, all windows or a tab group, then rename them and add a note',
+      'Warns about URLs that look like they hold secrets and can strip URL parameters',
+      'Right-click to share, or press Alt+Shift+L',
+      'Recipients can open a whole leaf as a named tab group',
+    ],
+    preview: 'linkleaf.netlify.app/#v2.eJyrVipTsjLSUcpLzE1V',
+    tags: ['Chrome MV3', 'JavaScript', 'Privacy-first', 'node:test'],
+    links: [
+      { label: 'Install from Chrome Web Store', href: 'https://chromewebstore.google.com/detail/linkleaf-tab-sharer/olnhckkiecodhbigadomfninaeimaika' },
+      { label: 'Website', href: 'https://linkleaf.netlify.app/' },
+    ],
+    accent: 'green',
+  },
   {
     name: 'Go For Vaccine',
     blurb: 'Notifies you the moment COVID-19 vaccination slots open up near you. Built with Abhishek Agarwal during the 2021 rush, when every minute mattered.',

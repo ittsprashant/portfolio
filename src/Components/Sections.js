@@ -193,36 +193,52 @@ export function Projects() {
     <section id="projects" className="section">
       <div className="container">
         <SectionHeader index="03" eyebrow="Side quests" title={<>Things I've <span className="gradient-text">built</span> for fun & good</>}>
-          Weekend builds, pro bono work and freelance sites.
+          A published Chrome extension, weekend builds, pro bono work and freelance sites.
         </SectionHeader>
 
         <div className="projects-grid">
           {projects.map((p, i) => (
             <article
-              className={`card project-card accent-${p.accent} reveal`}
+              className={`card project-card accent-${p.accent} ${p.featured ? 'is-featured' : ''} reveal`}
               key={p.name}
               style={{ transitionDelay: `${(i % 3) * 90}ms` }}
-              {...tiltHandlers(7)}
+              {...tiltHandlers(p.featured ? 3 : 7)}
             >
               <div className="card-spotlight" />
               <div className="project-top">
                 <span className="project-index">{String(i + 1).padStart(2, '0')}</span>
                 <span className="project-orb" />
               </div>
-              <h3>{p.name}</h3>
-              <p>{p.blurb}</p>
-              <div className="chips">
-                {p.tags.map((t) => <span className="chip" key={t}>{t}</span>)}
-              </div>
-              {p.links.length > 0 && (
-                <div className="project-links">
-                  {p.links.map((l) => (
-                    <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer">
-                      {l.label} <span className="arrow">↗</span>
-                    </a>
-                  ))}
+              <div className="project-body">
+                <div className="project-main">
+                  {p.featured && <span className="project-badge">Featured · Live on Chrome Web Store</span>}
+                  <h3>{p.name}</h3>
+                  <p>{p.blurb}</p>
+                  <div className="chips">
+                    {p.tags.map((t) => <span className="chip" key={t}>{t}</span>)}
+                  </div>
+                  {p.links.length > 0 && (
+                    <div className="project-links">
+                      {p.links.map((l) => (
+                        <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer">
+                          {l.label} <span className="arrow">↗</span>
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              )}
+                {p.featured && (
+                  <div className="project-aside">
+                    <div className="url-bar" aria-hidden="true">
+                      <span className="url-lock">🔒</span>
+                      <span className="url-text">{p.preview}<span className="url-fade">…</span></span>
+                    </div>
+                    <ul className="project-highlights">
+                      {p.highlights.map((h) => <li key={h}>{h}</li>)}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </article>
           ))}
         </div>
