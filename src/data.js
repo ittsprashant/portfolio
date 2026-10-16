@@ -1,5 +1,10 @@
 // All portfolio content lives here — edit this file to update the site.
 
+// Toggle visual extras without touching component code.
+export const features = {
+  particles: false, // connecting-dots animation in the page background
+};
+
 export const CAREER_START = new Date(2020, 1, 1); // Feb 2020, first software role
 
 export const yearsOfExperience = () => {
@@ -27,7 +32,7 @@ export const profile = {
     'Mentor to graduate engineers',
   ],
   summary:
-    'I lead frontend at FreechargeBiz, where I own the technical architecture of the web platform. I build fast, secure, scalable fintech journeys, from AI-powered document extraction for Axis Bank auto loans to seamless cross-domain SSO through a company demerger.',
+    'I write React for a living, mostly the fintech kind where speed and security actually matter. 6+ years in, currently building at FreechargeBiz.',
 };
 
 export const stats = [

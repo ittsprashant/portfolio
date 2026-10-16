@@ -18,7 +18,7 @@ function CommandPalette({ open, onClose, onCopyEmail }) {
       { group: 'Navigate', label: 'Contact', icon: '✉', run: go('contact') },
       { group: 'Actions', label: 'Copy email address', icon: '⧉', run: onCopyEmail },
       { group: 'Actions', label: 'Send an email', icon: '✉', run: () => { window.location.href = `mailto:${profile.email}`; } },
-      { group: 'Actions', label: 'Open résumé', icon: '↗', run: open(profile.resume) },
+      { group: 'Actions', label: 'Open resume', icon: '↗', run: open(profile.resume) },
       { group: 'Links', label: 'LinkedIn', icon: 'in', run: open(profile.linkedin) },
       { group: 'Links', label: 'GitHub', icon: '{}', run: open(profile.github) },
     ];

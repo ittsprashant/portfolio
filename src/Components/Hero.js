@@ -8,7 +8,7 @@ const S = ({ c, children }) => <span className={`tok-${c}`}>{children}</span>;
 function CodeCard() {
   const years = yearsOfExperience();
   const lines = [
-    <><S c="kw">const</S> <S c="var">prashant</S> <S c="op">=</S> {'{'}</>,
+    <><S c="kw">let</S> <S c="var">prashant</S> <S c="op">=</S> {'{'}</>,
     <>  <S c="key">role</S>: <S c="str">"{profile.shortRole}"</S>,</>,
     <>  <S c="key">currently</S>: <S c="str">"@{profile.company}"</S>,</>,
     <>  <S c="key">experience</S>: <S c="str">"{years}+ years"</S>,</>,
@@ -80,7 +80,7 @@ function Hero() {
               See my work <span aria-hidden="true">↓</span>
             </a>
             <a href={profile.resume} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
-              Résumé <span aria-hidden="true">↗</span>
+              Resume <span aria-hidden="true">↗</span>
             </a>
             <div className="hero-socials">
               <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="icon-btn">

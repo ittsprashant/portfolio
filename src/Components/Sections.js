@@ -355,7 +355,7 @@ export function Contact({ copied, onCopyEmail }) {
           <div className="contact-meta">
             <a href={`tel:${profile.phone.replace(/[^+\d]/g, '')}`}>{profile.phone}</a>
             <span className="sep">·</span>
-            <a href={profile.resume} target="_blank" rel="noopener noreferrer">Résumé ↗</a>
+            <a href={profile.resume} target="_blank" rel="noopener noreferrer">Resume ↗</a>
           </div>
         </div>
       </div>

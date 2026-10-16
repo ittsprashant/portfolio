@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { features } from '../data';
 
 const COLORS = ['97, 218, 251', '141, 200, 145', '245, 111, 22'];
 
@@ -7,7 +8,17 @@ function Background() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    const setSpotlight = (e) => {
+      document.documentElement.style.setProperty('--mx', `${e.clientX}px`);
+      document.documentElement.style.setProperty('--my', `${e.clientY}px`);
+    };
+
     const canvas = canvasRef.current;
+    if (!canvas) {
+      window.addEventListener('pointermove', setSpotlight);
+      return () => window.removeEventListener('pointermove', setSpotlight);
+    }
+
     const ctx = canvas.getContext('2d');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const mouse = { x: -9999, y: -9999 };
@@ -94,8 +105,7 @@ function Background() {
     const onMove = (e) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
-      document.documentElement.style.setProperty('--mx', `${e.clientX}px`);
-      document.documentElement.style.setProperty('--my', `${e.clientY}px`);
+      setSpotlight(e);
     };
     const onLeave = () => {
       mouse.x = -9999;
@@ -123,7 +133,7 @@ function Background() {
 
   return (
     <div className="bg" aria-hidden="true">
-      <canvas ref={canvasRef} />
+      {features.particles && <canvas ref={canvasRef} />}
       <div className="bg-blob bg-blob-1" />
       <div className="bg-blob bg-blob-2" />
       <div className="bg-blob bg-blob-3" />
