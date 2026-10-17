@@ -989,6 +989,15 @@ a:hover .arrow {
   font-weight: 600;
 }
 
+.job-points .metric {
+  color: var(--text);
+  font-weight: 700;
+  white-space: nowrap;
+  background: linear-gradient(transparent 62%, rgba(141, 200, 145, 0.28) 62%);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
 .timeline-divider {
   position: relative;
   margin: 8px 0 22px -44px;

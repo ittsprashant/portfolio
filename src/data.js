@@ -43,6 +43,7 @@ export const stats = [
 ];
 
 // A point is either a plain string or { k: 'Lead-in', v: 'detail' }.
+// Wrap impact numbers in **double asterisks** to highlight them.
 export const experience = [
   {
     company: 'FreechargeBiz',
@@ -53,16 +54,18 @@ export const experience = [
         title: 'Lead Software Development Engineer',
         period: 'May 2026 — Present',
         points: [
-          { k: 'AI document processing', v: 'Built an AI-powered document ingestion pipeline for Axis Bank’s Auto Loan journey. Uploaded documents go to an AI model for structured extraction, and the parsed fields are surfaced for review and auto-filled into downstream forms, cutting manual entry time and errors.' },
-          { k: 'Demerger auth continuity', v: 'Engineered a cross-domain SSO handoff during the Freecharge–FreechargeBiz demerger. Users are routed to the right Freecharge module, such as mobile recharge, with their session intact and no re-authentication.' },
+          {
+            k: 'AI document processing:',
+            v: 'Reduced operations TAT on Axis Bank auto loan applications from **40 hours** to **11 (~72%)** by integrating an AI model which now reads uploaded documents and prevents users from submitting incorrect ones, and extracts the details, which are shown for review and auto-filled forms where needed.'
+          },
         ],
       },
       {
         title: 'Senior Software Development Engineer',
         period: 'Jan 2026 — May 2026',
         points: [
-          'Led key frontend initiatives during Freecharge’s demerger, owning the complete technical architecture of the FreechargeBiz web platform.',
-          'Engineered secure cross-domain journeys between FreechargeBiz and Freecharge for bill payments, recharges, MFI flows and gold loans, keeping the UX seamless and fast throughout a large-scale platform separation.',
+          { k: 'Demerger auth continuity:', v: 'Engineered cross-domain SSO handoff during the Freecharge-Freechargebiz demerger with **0 downtime** on production - users landing on Freechargebiz can move to Freecharge modules with session integrity fully preserved, eliminating re-authentication across domains.' },
+          'Engineered secure cross-domain journeys between FreechargeBiz and Freecharge with user drop rate as low as **~3%** for bill payments, recharges, MFI flows and gold loans, keeping the UX seamless and fast throughout a large-scale platform separation.',
         ],
       },
     ],
@@ -80,16 +83,19 @@ export const experience = [
           {
             label: 'Axis Bank',
             points: [
-              'Led development of Fixed Deposit booking web journeys for Axis Bank in React.',
+              'Grew monthly average FD booking volume from ₹45 Cr to ₹70 Cr **(~56%)** by building the FDCC journey from scratch, and led development of FD booking journeys for both existing and new-to-bank customers.',
               'Standardised data security with crypto-js payload encryption, protecting the integrity of transmitted data.',
-              'Doubled user retention through strategic UX improvements, directly driving business growth.',
-              'Cut page load times by 30% and bundle size by 40% with code splitting, dynamic imports and higher-order components.',
+              '**Doubled user retention** through strategic UX improvements, directly driving business growth.',
+              'Cut page load times by **30%** and bundle size by **40%** with code splitting, dynamic imports and higher-order components.',
               'Wrote and maintained technical documentation for frontend frameworks and reusable modules.',
             ],
           },
           {
             label: 'Consumer web app',
             points: [
+                                  { k: 'Payment Solutions:', v: 'Designed and built comprehensive payment solutions like credit card processing, NCMC recharge, donation platform, and transaction management that resulted in achieving **3%** market penetration, **35%** MAU growth, **25%** ARPU increase.'},
+                                  { k: 'Performance & Compliance:', v: 'Migrated from Babel → SWC, cutting build time **28%** (43s → 31s) and CPU usage **24–30%**. Architected webview-based compliance solution across iOS and Android with **95%** user-flow completion rate.'},
+
               'Led integration of new BillDesk bill payment categories (Rentals, NPS, Donations, Hospitals, Pathology) with hybrid journeys across Android and iOS through native bridge functions.',
               'Built a reusable, scalable Bill Payments SDK now used by clients such as IKEDA.',
               'Mentored a team of graduate engineers through regular code reviews and frontend best practices.',
@@ -109,6 +115,9 @@ export const experience = [
         title: 'Senior Software Engineer',
         period: 'Aug 2022 — Jun 2023',
         points: [
+                    { k: 'Product Growth:', v: 'Built the Extramarks Learning App from scratch, driving 5x retention improvement and scaling installs from 5M to 8M+ across Play Store and App Store -  a 60% adoption increase with measurably higher app ratings.'},
+                    { k: 'Performance Optimization: ', v: 'Reduced JS bundle size from 412 KB to 264 KB (~36%) via code splitting, lazy loading, tree shaking, and CDN usage - resulting in significantly faster load times across devices.'},
+
           'Mentored juniors through deep dives into React and vanilla JavaScript.',
           'Led major R&D projects to boost web app performance, including converting the app into a PWA with periodic background data sync.',
         ],
@@ -117,7 +126,7 @@ export const experience = [
         title: 'Software Developer',
         period: 'Jun 2021 — Jul 2022',
         points: [
-          { k: 'Student dashboards', v: 'Core team member building the learning app for students and teachers in React.' },
+          { k: 'Student dashboards:', v: 'Core team member building the learning app for students and teachers in React.' },
           'Integrated Zoom across web and mobile apps.',
           'Shipped live classes through an Impartus integration.',
         ],
@@ -134,12 +143,12 @@ export const experience = [
         title: 'Frontend Developer',
         period: 'Feb 2020 — Jun 2021',
         points: [
-          { k: 'Power BI embedded dashboards', v: 'Owned every Power BI embedding for Unilever, Mondelez and Nestlé, built with React, Flask and MSAL.' },
-          { k: 'NPD tool', v: 'Built a New Product Detection tool for Ferrero from scratch to recognise and mark products in shelf images.' },
-          { k: 'SmartReader', v: 'A text analysis tool: upload a CSV and get sentiment, emotion and keyword analysis.' },
-          { k: 'SSO & APIs', v: 'Implemented ParallelDots single sign-on and REST APIs in Flask and SQL for image recognition and text analysis dashboards.' },
-          { k: 'Demos & user dashboard', v: 'Built image recognition demos for every new client and the dashboard for AI API users from scratch.' },
-          'Revamped the company website for 3x faster load times.',
+          { k: 'Power BI embedded dashboards:', v: 'Owned every Power BI embedding for Unilever, Mondelez and Nestlé, built with React, Flask and MSAL.' },
+          { k: 'NPD tool:', v: 'Built a New Product Detection tool for Ferrero from scratch to recognise and mark products in shelf images.' },
+          { k: 'SmartReader:', v: 'A text analysis tool: upload a CSV and get sentiment, emotion and keyword analysis.' },
+          { k: 'SSO & APIs:', v: 'Implemented ParallelDots single sign-on and REST APIs in Flask and SQL for image recognition and text analysis dashboards.' },
+          { k: 'Demos & user dashboard:', v: 'Built image recognition demos for every new client and the dashboard for AI API users from scratch.' },
+          'Revamped the company website for **3x faster** load times.',
         ],
       },
     ],
@@ -170,7 +179,7 @@ export const experience = [
         points: [
           'Ran and modified production machinery (POSIMAT, ACMA, shrink tunnels, NORDON) to raise line efficiency.',
           'Eliminated coding defects with a consumer-first view of quality, working within World Class Manufacturing (WCM).',
-          { k: 'Project Ferrari', v: 'Reduced minor stoppages on line BL-5 and de-bottlenecked pick-and-place cycle time.' },
+          { k: 'Project Ferrari:', v: 'Reduced minor stoppages on line BL-5 and de-bottlenecked pick-and-place cycle time.' },
         ],
       },
     ],

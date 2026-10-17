@@ -4,6 +4,13 @@ import { tiltHandlers } from '../hooks';
 import TextSphere from './TextSphere';
 import { LinkedInIcon, GitHubIcon, MailIcon } from './Hero';
 
+// Renders **marked** spans as highlighted metrics.
+function Rich({ text }) {
+  return text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
+    i % 2 ? <strong className="metric" key={i}>{part}</strong> : part
+  );
+}
+
 function SectionHeader({ index, eyebrow, title, children }) {
   return (
     <div className="section-header reveal">
@@ -125,8 +132,8 @@ export function Experience() {
                             <ul className="job-points">
                               {group.points.map((pt) => (
                                 typeof pt === 'string'
-                                  ? <li key={pt}>{pt}</li>
-                                  : <li key={pt.k}><strong>{pt.k}.</strong> {pt.v}</li>
+                                  ? <li key={pt}><Rich text={pt} /></li>
+                                  : <li key={pt.k}><strong>{pt.k}</strong> <Rich text={pt.v} /></li>
                               ))}
                             </ul>
                           )}
