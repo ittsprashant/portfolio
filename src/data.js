@@ -21,7 +21,7 @@ export const profile = {
   location: 'Bangalore · Gurugram · Kanpur',
   email: 'itsprashant95@gmail.com',
   phone: '+91-7830929186',
-  resume: 'https://drive.google.com/file/d/1uKTduS0mUa4zydEf17Lf30SX2msDtXyz/view',
+  resume: 'https://drive.google.com/file/d/1f0rCXE741OYlrn0fwQEUM8gtGH53gXBo/view',
   linkedin: 'https://www.linkedin.com/in/itsprashant95/',
   github: 'https://github.com/ittsprashant',
   roles: [

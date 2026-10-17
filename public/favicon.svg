@@ -1,11 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <!-- Matches the header logo: linear-gradient(110deg, cyan, green 45%, orange) -->
+    <linearGradient id="g" x1="0" y1="0.32" x2="1" y2="0.68">
       <stop offset="0" stop-color="#61dafb"/>
-      <stop offset="0.5" stop-color="#8dc891"/>
+      <stop offset="0.45" stop-color="#8dc891"/>
       <stop offset="1" stop-color="#f56f16"/>
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="16" fill="url(#g)"/>
-  <text x="32" y="42" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="26" font-weight="700" fill="#07080c">PA</text>
+  <!-- "PA" drawn as strokes so it renders identically without fonts -->
+  <g fill="none" stroke="#07080c" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 45V19h8.5a7.5 7.5 0 0 1 0 15H14"/>
+    <path d="M33 45l8-26 8 26"/>
+    <path d="M36 36.5h10"/>
+  </g>
 </svg>
