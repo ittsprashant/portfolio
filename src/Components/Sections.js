@@ -73,8 +73,123 @@ export function Stats() {
   );
 }
 
+const spanOf = (roles) => {
+  const end = roles[0].period.split(' — ')[1] || roles[0].period;
+  const start = roles[roles.length - 1].period.split(' — ')[0];
+  return `${start} — ${end}`;
+};
+
+const hasDetails = (job) =>
+  job.tags.length > 0 ||
+  job.roles.some((r) => (r.groups || [{ points: r.points }]).some((g) => g.points.length > 0));
+
+function JobDetails({ job }) {
+  return (
+    <>
+      {job.roles.map((role) => (
+        <div className="job-role" key={role.title}>
+          <div className="job-role-head">
+            <h4>{role.title}</h4>
+            <span className="job-period">{role.period}</span>
+          </div>
+          {(role.groups || [{ points: role.points }]).map((group, gi) => (
+            <div className="job-group" key={group.label || gi}>
+              {group.label && <p className="job-group-label">{group.label}</p>}
+              {group.points.length > 0 && (
+                <ul className="job-points">
+                  {group.points.map((pt) => (
+                    typeof pt === 'string'
+                      ? <li key={pt}><Rich text={pt} /></li>
+                      : <li key={pt.k}><strong>{pt.k}</strong> <Rich text={pt.v} /></li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
+      ))}
+
+      {job.tags.length > 0 && (
+        <div className="chips">
+          {job.tags.map((t) => <span className="chip" key={t}>{t}</span>)}
+        </div>
+      )}
+    </>
+  );
+}
+
+function JobCard({ job, open, onToggle }) {
+  const expandable = hasDetails(job);
+  const bodyId = `job-${job.company.replace(/\W+/g, '-').toLowerCase()}`;
+  const extraRoles = job.roles.length - 1;
+
+  return (
+    <div className={`card job-card ${open ? 'is-open' : ''}`} {...tiltHandlers(0)}>
+      <div className="card-spotlight" />
+      <div className="job-head">
+        <button
+          type="button"
+          className="job-toggle"
+          onClick={onToggle}
+          aria-expanded={expandable ? open : undefined}
+          aria-controls={expandable ? bodyId : undefined}
+          disabled={!expandable}
+        >
+          <span className="job-toggle-main">
+            <span className="job-company">{job.company}</span>
+            <span className="job-title-line">
+              {job.roles[0].title}
+              {extraRoles > 0 && <span className="job-more">+{extraRoles} earlier role{extraRoles > 1 ? 's' : ''}</span>}
+            </span>
+          </span>
+          <span className="job-toggle-meta">
+            <span className="job-period">{spanOf(job.roles)}</span>
+            <span className="job-location">{job.location}</span>
+          </span>
+          {expandable && <span className="job-chevron" aria-hidden="true" />}
+        </button>
+        {job.url && (
+          <a className="job-link icon-btn" href={job.url} target="_blank" rel="noopener noreferrer" aria-label={`${job.company} website`}>
+            ↗
+          </a>
+        )}
+      </div>
+
+      {job.highlight && (
+        <p className="job-highlight" aria-hidden={open}>
+          <Rich text={job.highlight} />
+        </p>
+      )}
+
+      {expandable && (
+        <div className="job-collapse" id={bodyId} role="region" aria-label={`${job.company} details`}>
+          <div className="job-collapse-inner" inert={open ? undefined : ''}>
+            <JobDetails job={job} />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function Experience() {
   const listRef = useRef(null);
+  const [openSet, setOpenSet] = useState(
+    () => new Set(experience.filter((j) => j.defaultOpen).map((j) => j.company))
+  );
+  const expandable = experience.filter(hasDetails);
+  const allOpen = expandable.every((j) => openSet.has(j.company));
+
+  const toggle = (company) =>
+    setOpenSet((prev) => {
+      const next = new Set(prev);
+      if (next.has(company)) next.delete(company);
+      else next.add(company);
+      return next;
+    });
+
+  const toggleAll = () =>
+    setOpenSet(allOpen ? new Set() : new Set(expandable.map((j) => j.company)));
 
   useEffect(() => {
     const el = listRef.current;
@@ -87,9 +202,13 @@ export function Experience() {
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
+    // Cards change height as they expand, so keep the timeline fill in sync.
+    const ro = 'ResizeObserver' in window ? new ResizeObserver(onScroll) : null;
+    if (ro) ro.observe(el);
     return () => {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
+      if (ro) ro.disconnect();
     };
   }, []);
 
@@ -100,57 +219,20 @@ export function Experience() {
           From payments and banking to EdTech and retail AI, I've worked on products where reliability and speed mean real money and real people. Before that, I started out on a factory floor.
         </SectionHeader>
 
+        <div className="timeline-controls reveal">
+          <button type="button" className="btn btn-ghost btn-sm" onClick={toggleAll}>
+            {allOpen ? 'Collapse all' : 'Expand all'}
+          </button>
+        </div>
+
         <ol className="timeline" ref={listRef}>
-          {experience.map((job) => {
-            return (
-              <li className={`timeline-item reveal ${job.compact ? 'is-compact' : ''}`} key={job.company}>
-                {job.beforeSoftware && <p className="timeline-divider">Before software</p>}
-                <span className="timeline-dot" />
-                <div className="card job-card" {...tiltHandlers(3)}>
-                  <div className="card-spotlight" />
-                  <div className="job-head">
-                    <h3 className="job-company">
-                      {job.url ? (
-                        <a href={job.url} target="_blank" rel="noopener noreferrer">
-                          {job.company} <span className="arrow">↗</span>
-                        </a>
-                      ) : job.company}
-                    </h3>
-                    <span className="job-location">{job.location}</span>
-                  </div>
-
-                  {job.roles.map((role) => (
-                    <div className="job-role" key={role.title}>
-                      <div className="job-role-head">
-                        <h4>{role.title}</h4>
-                        <span className="job-period">{role.period}</span>
-                      </div>
-                      {(role.groups || [{ points: role.points }]).map((group, gi) => (
-                        <div className="job-group" key={group.label || gi}>
-                          {group.label && <p className="job-group-label">{group.label}</p>}
-                          {group.points.length > 0 && (
-                            <ul className="job-points">
-                              {group.points.map((pt) => (
-                                typeof pt === 'string'
-                                  ? <li key={pt}><Rich text={pt} /></li>
-                                  : <li key={pt.k}><strong>{pt.k}</strong> <Rich text={pt.v} /></li>
-                              ))}
-                            </ul>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-
-                  {job.tags.length > 0 && (
-                    <div className="chips">
-                      {job.tags.map((t) => <span className="chip" key={t}>{t}</span>)}
-                    </div>
-                  )}
-                </div>
-              </li>
-            );
-          })}
+          {experience.map((job) => (
+            <li className={`timeline-item reveal ${job.compact ? 'is-compact' : ''}`} key={job.company}>
+              {job.beforeSoftware && <p className="timeline-divider">Before software</p>}
+              <span className="timeline-dot" />
+              <JobCard job={job} open={openSet.has(job.company)} onToggle={() => toggle(job.company)} />
+            </li>
+          ))}
         </ol>
       </div>
     </section>

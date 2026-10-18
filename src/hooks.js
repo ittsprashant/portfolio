@@ -83,7 +83,7 @@ export function tiltHandlers(strength = 8) {
       const y = e.clientY - rect.top;
       el.style.setProperty('--cx', `${x}px`);
       el.style.setProperty('--cy', `${y}px`);
-      if (reduce || e.pointerType !== 'mouse') return;
+      if (reduce || !strength || e.pointerType !== 'mouse') return;
       const rx = ((y / rect.height) - 0.5) * -strength;
       const ry = ((x / rect.width) - 0.5) * strength;
       el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;

@@ -44,11 +44,15 @@ export const stats = [
 
 // A point is either a plain string or { k: 'Lead-in', v: 'detail' }.
 // Wrap impact numbers in **double asterisks** to highlight them.
+// `highlight` is the one-line summary shown while a card is collapsed;
+// `defaultOpen` expands that card on page load.
 export const experience = [
   {
     company: 'FreechargeBiz',
     url: 'https://www.freechargebiz.in/',
     location: 'Bangalore | Gurugram',
+    defaultOpen: true,
+    highlight: '**40h → 11h** loan ops turnaround · **0 downtime** SSO handoff',
     roles: [
       {
         title: 'Lead Software Development Engineer',
@@ -75,6 +79,7 @@ export const experience = [
     company: 'Freecharge',
     url: 'https://www.freecharge.in/',
     location: 'Bangalore | Gurugram',
+    highlight: '**₹45 Cr → ₹70 Cr** monthly FD bookings · **35%** MAU growth · **2x** retention',
     roles: [
       {
         title: 'Senior Software Development Engineer',
@@ -110,6 +115,7 @@ export const experience = [
     company: 'Extramarks Education',
     url: 'https://www.extramarks.com/',
     location: 'Noida',
+    highlight: '**5M → 8M+** app installs · **5x** retention · **36%** smaller bundle',
     roles: [
       {
         title: 'Senior Software Engineer',
@@ -138,6 +144,7 @@ export const experience = [
     company: 'ParallelDots',
     url: 'https://www.paralleldots.com/',
     location: 'Gurugram',
+    highlight: 'Power BI dashboards for **Unilever, Mondelez & Nestlé** · **3x faster** website',
     roles: [
       {
         title: 'Frontend Developer',
